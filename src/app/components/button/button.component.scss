@@ -3,17 +3,18 @@ button {
   padding: 10px;
   border-radius: 6px;
   border: 0;
-  font-weight: bold;
+  font-weight: 700;
+  height: 48px;
 }
 
 .outline {
   background-color: transparent !important;
   border-width: 2px;
   border-style: solid;
-  border-color: var(--gray-1);
+  border-color: var(--gray-2);
 }
 
 .full {
-  background-color: var(--red-mid);
+  background-color: var(--gray-2);
   color: var(--white);
 }
