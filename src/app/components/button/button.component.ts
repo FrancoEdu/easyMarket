@@ -1,5 +1,5 @@
 import { NgClass } from '@angular/common';
-import { Component, input } from '@angular/core';
+import { Component, input, output } from '@angular/core';
 
 type buttonTypeStyleProps = 'outline' | 'full'
 
@@ -10,8 +10,15 @@ type buttonTypeStyleProps = 'outline' | 'full'
   styleUrl: './button.component.scss'
 })
 export class ButtonComponent {
+
   buttonTitleText = input<string>('Clique aqui');
   variant = input<buttonTypeStyleProps>('outline');
   useSvgIcon = input<boolean>(false);
   iconPath = input<string>('bi bi-arrow-left');
+
+  handleClickButton = output<void>();
+
+  handleClick() {
+    this.handleClickButton.emit();
+  }
 }
