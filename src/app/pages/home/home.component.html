@@ -6,10 +6,22 @@
     <span>Produtos</span>
     <div class="botoes">
       <div class="w-100">
-        <app-button buttonTitleText="Novo produto" [variant]="'full'" [useSvgIcon]="true" iconPath="add"/>
+        <app-button 
+          buttonTitleText="Novo produto" 
+          [variant]="'full'" 
+          [useSvgIcon]="true" 
+          iconPath="add" 
+          (handleClickButton)="handleClickButtonNavigation(navigationOptionsPossibilities.NEW_PRODUCT)" 
+        />
       </div>
       <div class="w-100">
-        <app-button buttonTitleText="Encerrar compra" [variant]="'outline'" [useSvgIcon]="true" iconPath="payments"/>
+        <app-button 
+          buttonTitleText="Encerrar compra" 
+          [variant]="'outline'" 
+          [useSvgIcon]="true" 
+          iconPath="payments"
+          (handleClickButton)="handleClickButtonNavigation(navigationOptionsPossibilities.CART)" 
+        />
       </div>
     </div>
     <div class="w-100">
