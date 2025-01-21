@@ -6,14 +6,15 @@
     <span>Produtos</span>
     <div class="botoes">
       <div class="w-100">
-        <app-button buttonTitleText="Novo produto" [variant]="'full'" [useSvgIcon]="true"/>
+        <app-button buttonTitleText="Novo produto" [variant]="'full'" [useSvgIcon]="true" iconPath="add"/>
       </div>
       <div class="w-100">
-        <app-button buttonTitleText="Encerrar compra" [variant]="'outline'" [useSvgIcon]="true"/>
+        <app-button buttonTitleText="Encerrar compra" [variant]="'outline'" [useSvgIcon]="true" iconPath="payments"/>
       </div>
     </div>
     <div class="w-100">
       <app-input/>
+      <app-flatlist/>
     </div>
   </div>
 </section>
