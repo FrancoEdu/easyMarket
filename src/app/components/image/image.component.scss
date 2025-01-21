@@ -1,0 +1,12 @@
+.image-container img {
+  max-width: 100%; /* Garante que a imagem não ultrapasse os limites */
+  height: auto;
+}
+
+@media (min-width: 768px) {
+  .image-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+  }
+}

@@ -1,0 +1,19 @@
+button {
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  border: 0;
+  font-weight: bold;
+}
+
+.outline {
+  background-color: transparent !important;
+  border-width: 2px;
+  border-style: solid;
+  border-color: var(--gray-1);
+}
+
+.full {
+  background-color: var(--red-mid);
+  color: var(--white);
+}
