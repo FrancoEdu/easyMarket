@@ -25,4 +25,24 @@
     font-size: 14px;
     color: var(--gray-2);
   }
+
+  .buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+
+    button{
+      background-color: transparent !important;
+      border: 0;
+
+      .icon-draw {
+        color: var(--green-dark);
+      }
+
+      .icon-delete {
+        color: var(--red-dark);
+      }
+    }
+  }
 }
