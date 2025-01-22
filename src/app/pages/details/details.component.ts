@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { HeaderTitleComponent } from "../../components/header-title/header-title.component";
 
 @Component({
   selector: 'app-details',
-  imports: [],
+  imports: [HeaderTitleComponent],
   templateUrl: './details.component.html',
   styleUrl: './details.component.scss'
 })

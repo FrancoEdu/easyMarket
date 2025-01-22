@@ -1,0 +1,21 @@
+.header {
+  display: flex;
+  align-items: center;
+  background-color: transparent !important;
+  padding: 20px 16px 10px 16px;
+  text-align: center;
+}
+
+.back-button {
+  position: absolute;
+  background-color: transparent !important;
+  border: 0;
+}
+
+.header-title {
+  font-size: 18px;
+  font-weight: 500;
+  text-align: center;
+  width: 100%;
+  color: var(--gray-2);
+}
