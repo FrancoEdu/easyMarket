@@ -1,6 +1,15 @@
-.image-container img {
+.image-container {
   max-width: 100%; /* Garante que a imagem não ultrapasse os limites */
   height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  
+  img{
+    max-width: 50%;
+    height: auto;
+  }
 }
 
 @media (min-width: 768px) {
