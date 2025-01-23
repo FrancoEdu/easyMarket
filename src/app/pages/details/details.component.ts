@@ -2,10 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { HeaderTitleComponent } from "../../components/header-title/header-title.component";
 import { ImageComponent } from '../../components/image/image.component';
+import { ButtonComponent } from '../../components/button/button.component';
 
 @Component({
   selector: 'app-details',
-  imports: [HeaderTitleComponent, ImageComponent],
+  imports: [HeaderTitleComponent, ImageComponent, ButtonComponent],
   templateUrl: './details.component.html',
   styleUrl: './details.component.scss'
 })

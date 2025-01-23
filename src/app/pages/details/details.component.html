@@ -5,17 +5,20 @@
     <div class="container text-center product-details">
       <div class="row">
         <div class="col">
+          <div class="badge-category">
+            <span class="circle-badge"></span>
+            <span>Hortifrúti</span>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
           <span class="span-title">Nome</span>
           <span>Picanha</span>
         </div>
         <div class="col">
           <span class="span-title">Preço</span>
           <span><span class="span-title">R$ </span> 200,00</span>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col">
-          <span>CATEGORIA BADGE</span>
         </div>
       </div>
       <div class="row">
@@ -45,6 +48,12 @@
         </div>
         <div class="col"></div>
       </div>
+    </div>
+    <div class="w-100 mb-1">
+      <app-button buttonTitleText="Editar produto" [useSvgIcon]="true" iconPath="edit"/>
+    </div>
+    <div class="w-100">
+      <app-button buttonTitleText="Excluir do carrinho" [useSvgIcon]="true" iconPath="delete" [variant]="'delete'"/>
     </div>
   </section>
 </section>

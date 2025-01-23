@@ -2,7 +2,7 @@ import { NgClass } from '@angular/common';
 import { Component, input, output } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 
-type buttonTypeStyleProps = 'outline' | 'full'
+type buttonTypeStyleProps = 'outline' | 'full' | 'delete'
 
 @Component({
   selector: 'app-button',

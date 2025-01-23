@@ -12,3 +12,21 @@
   font-weight: 700;
   color: var(--gray-2);
 }
+
+.badge-category {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  border-radius: 6px;
+  padding: 4px 8px;
+  background-color: var(--gray-7);
+
+  .circle-badge {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: var(--green-mid);
+  }
+}
