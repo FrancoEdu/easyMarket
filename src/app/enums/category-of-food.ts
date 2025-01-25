@@ -1,4 +1,4 @@
-export enum SupermarketSectors {
+export enum CategoryOfProducts {
   PRODUCE = "Produce", // HORTIFRÚTI: frutas, vegetais e legumes
   BAKERY = "Bakery", // PADARIA: pães, bolos e doces
   DAIRY = "Dairy", // LATICÍNIOS: leite, queijos, iogurtes
@@ -18,3 +18,27 @@ export enum SupermarketSectors {
   SEASONAL = "Seasonal", // SAZONAIS: produtos para festas e datas comemorativas
   DELI = "Deli", // ROTISSERIA: comidas prontas e frios
 }
+
+export const _productsThatUsePerKilo: CategoryOfProducts[] = [
+  CategoryOfProducts.PRODUCE,
+  CategoryOfProducts.BAKERY,
+  CategoryOfProducts.MEAT_AND_SEAFOOD,
+  CategoryOfProducts.DELI,
+];
+
+export const _productsThatUseQuantity: CategoryOfProducts[] = [
+  CategoryOfProducts.ALCOHOL,
+  CategoryOfProducts.DAIRY,
+  CategoryOfProducts.FROZEN_FOODS,
+  CategoryOfProducts.BEVERAGES,
+  CategoryOfProducts.SNACKS,
+  CategoryOfProducts.PANTRY,
+  CategoryOfProducts.HOUSEHOLD,
+  CategoryOfProducts.HEALTH_AND_BEAUTY,
+  CategoryOfProducts.BABY,
+  CategoryOfProducts.PETS,
+  CategoryOfProducts.PHARMACY,
+  CategoryOfProducts.ELECTRONICS,
+  CategoryOfProducts.CLOTHING,
+  CategoryOfProducts.SEASONAL,
+];
