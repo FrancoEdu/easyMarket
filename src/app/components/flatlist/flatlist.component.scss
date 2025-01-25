@@ -5,3 +5,11 @@
   gap: 5px;
   margin-top: 20px;
 }
+
+.empty-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  font-size: 15px;
+}

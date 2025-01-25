@@ -1,5 +1,11 @@
 <div class="flatlist">
-  @for (item of products(); track $index) {
-    <app-card-product [product]="item"/>
+  @if (products()?.length ?? 0 > 0) {
+    @for (item of products(); track $index) {
+      <app-card-product [product]="item"/>
+    }
+  } @else {
+    <div class="empty-list">
+      <span>Nenhum produto encontrado</span>
+    </div>
   }
 </div>
