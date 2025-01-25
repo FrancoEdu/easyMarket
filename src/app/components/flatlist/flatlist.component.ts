@@ -1,11 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { CardProductComponent } from "../card-product/card-product.component";
-
-export interface mockProductCard {
-  id: number;
-  name: string;
-  price: number;
-}
+import { Product } from '../../models/product.model';
 
 @Component({
   selector: 'app-flatlist',
@@ -14,21 +9,5 @@ export interface mockProductCard {
   styleUrl: './flatlist.component.scss'
 })
 export class FlatlistComponent {
-  initialListOfProducts: mockProductCard[] = [
-    {
-      id: 1,
-      name: 'Picanha',
-      price: 100.00,
-    },
-    {
-      id: 2,
-      name: 'Cervejinha',
-      price: 200.00,
-    },
-    {
-      id: 3,
-      name: 'Abóbora',
-      price: 300.00,
-    }
-  ];
+  products = input<Product[]>();
 }

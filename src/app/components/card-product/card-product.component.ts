@@ -1,8 +1,8 @@
 import { Component, input } from '@angular/core';
-import { mockProductCard } from '../flatlist/flatlist.component';
 import { MatIconModule } from '@angular/material/icon';
 import { Router } from '@angular/router';
 import { RoutesPath } from '../../app.routes';
+import { Product } from '../../models/product.model';
 
 @Component({
   selector: 'app-card-product',
@@ -11,13 +11,13 @@ import { RoutesPath } from '../../app.routes';
   styleUrl: './card-product.component.scss'
 })
 export class CardProductComponent {
-  mockProduct = input<mockProductCard>();
+  product = input<Product>();
 
   constructor(
     private readonly _router: Router,
   ) { }
 
   handleClickProductDetails(): void {
-    this._router.navigate([RoutesPath.DETAILS, this.mockProduct()?.id])
+    this._router.navigate([RoutesPath.DETAILS, this.product()?.Id])
   }
 }

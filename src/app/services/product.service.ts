@@ -75,7 +75,7 @@ export class ProductService {
    * Pesquisa produtos pelo texto.
    * @param text Texto a ser pesquisado.
    */
-  searchBytext(text: string): Product[] {
+  searchByText(text: string): Product[] {
     const products = this.getAllProducts();
     return products.filter(product => product.Name.toLowerCase().includes(text.toLowerCase()));
   }

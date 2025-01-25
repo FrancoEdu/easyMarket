@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, input, output } from '@angular/core';
 
 @Component({
   selector: 'app-input',
@@ -8,4 +8,13 @@ import { Component, input } from '@angular/core';
 })
 export class InputComponent {
   placeholder = input<string>("Pesquise pelo produto...");
+  valueTextInput = output<string>();
+
+  inputValue: string = '';
+
+  onInputChange(event: Event): void {
+    const target = event.target as HTMLInputElement;
+    this.inputValue = target.value;
+    this.valueTextInput.emit(this.inputValue);
+  }
 }

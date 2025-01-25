@@ -1,5 +1,5 @@
 <div class="flatlist">
-  @for (item of initialListOfProducts; track $index) {
-    <app-card-product [mockProduct]="item"/>
+  @for (item of products(); track $index) {
+    <app-card-product [product]="item"/>
   }
 </div>
