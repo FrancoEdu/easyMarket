@@ -1,36 +1,47 @@
 <section class="w-100">
-  <app-header-title [titleHeader]="'Novo produto'"/>
+  <app-header-title [titleHeader]="'Novo produto'" />
   <div class="form-content">
-    <div class="w-100 form-group">
-      <app-header spanText="O preço do produto é" backgroundColor="background-gray"/>
-      
-      <app-input placeholder="Nome"/>
-      <app-category-dropdown (optionSelected)="handleOptionSelected($event)"/>
+    <div class="w-100 form-group" [formGroup]="productForm">
+      <app-header spanText="O preço do produto é" backgroundColor="background-gray" />
 
-      @if (isProductThatUsePerKilo) {
-        <app-input placeholder="Preço por quilo (R$)" type="number"/>
-        <app-input placeholder="Peso (kg)" type="number"/>
+      <!-- Nome do produto -->
+      <app-input placeholder="Nome" formControlName="name" />
+      @if (productForm.get('name')?.invalid && productForm.get('name')?.touched) {
+        <span>O nome do produto é obrigatório.</span>
       }
-      
+
+      <!-- Dropdown de categoria -->
+      <app-category-dropdown (optionSelected)="handleOptionSelected($event)" />
+      @if (productForm.get('category')?.invalid && productForm.get('category')?.touched) {
+        <span>A categoria do produto é obrigatória.</span>
+      }
+
+      <!-- Campos condicionais para produtos que usam preço por quilo -->
+      @if (isProductThatUsePerKilo) {
+        <app-input placeholder="Preço por quilo (R$)" type="number" formControlName="pricePerKilo" />
+        <app-input placeholder="Peso (kg)" type="number" formControlName="kilo" />
+      }
+
+      <!-- Campos condicionais para produtos que usam preço por unidade -->
       @if (isProductThatUsePerUnit) {
         <div class="unit-bale-dropdown">
-          <select>
+          <select formControlName="unitOrBale">
             <option [value]="true">Unidade</option>
             <option [value]="false">Fardo</option>
           </select>
         </div>
-        <app-input placeholder="Preço por unidade (R$)" type="number"/>
-        <app-input placeholder="Quantidade" type="number"/>
+        <app-input placeholder="Preço por unidade (R$)" type="number" formControlName="unitPrice" />
+        <app-input placeholder="Quantidade" type="number" formControlName="quantity" />
       }
 
+      <!-- Botão para salvar o produto -->
       <app-button
-        buttonTitleText="Adicionar" 
-        [variant]="'full'" 
-        [useSvgIcon]="true" 
-        iconPath="add" 
-        (handleClickButton)="handleClickButtonSave()" 
+        buttonTitleText="Adicionar"
+        [variant]="'full'"
+        [useSvgIcon]="true"
+        iconPath="add"
+        (handleClickButton)="handleClickButtonSave()"
       />
-
     </div>
   </div>
 </section>
