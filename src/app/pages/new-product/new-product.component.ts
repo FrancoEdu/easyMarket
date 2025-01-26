@@ -15,14 +15,17 @@ export class NewProductComponent {
   optionSelected?: CategoryOfProducts;
 
   handleOptionSelected(event: string): void {
-    this.optionSelected = event as CategoryOfProducts;
+    this.optionSelected = CategoryOfProducts[event as keyof typeof CategoryOfProducts];
+    console.log('Option selected:', this.optionSelected);
   }
 
-  isProductThatUsePerKilo(): boolean {
-    return (this.optionSelected && _productsThatUsePerKilo.includes(this.optionSelected)) ?? false;
+  get isProductThatUsePerKilo(): boolean {
+    if (this.optionSelected === undefined || this.optionSelected === null) return false;
+    return _productsThatUsePerKilo.includes(this.optionSelected);
   }
 
-  isProductThatUsePerUnit(): boolean {
-    return (this.optionSelected && !_productsThatUseQuantity.includes(this.optionSelected)) ?? false;
+  get isProductThatUsePerUnit(): boolean {
+    if (this.optionSelected === undefined || this.optionSelected === null) return false;
+    return _productsThatUseQuantity.includes(this.optionSelected);
   }
 }

@@ -4,6 +4,23 @@
     <div class="w-100 form-group">
       <app-input placeholder="Nome"/>
       <app-category-dropdown (optionSelected)="handleOptionSelected($event)"/>
+
+      @if (isProductThatUsePerKilo) {
+        <app-input placeholder="Preço por quilo (R$)" type="number"/>
+        <app-input placeholder="Peso (kg)" type="number"/>
+      }
+      
+      @if (isProductThatUsePerUnit) {
+        <div class="unit-bale-dropdown">
+          <select>
+            <option [value]="true">Unidade</option>
+            <option [value]="false">Fardo</option>
+          </select>
+        </div>
+        <app-input placeholder="Preço por unidade (R$)" type="number"/>
+        <app-input placeholder="Quantidade" type="number"/>
+      }
+
     </div>
   </div>
 </section>
