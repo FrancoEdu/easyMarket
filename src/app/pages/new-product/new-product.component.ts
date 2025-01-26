@@ -2,11 +2,7 @@ import { Component } from '@angular/core';
 import { InputComponent } from '../../components/input/input.component';
 import { HeaderTitleComponent } from '../../components/header-title/header-title.component';
 import { CategoryDropdownComponent } from '../../components/category-dropdown/category-dropdown.component';
-
-interface Food {
-  value: string;
-  viewValue: string;
-}
+import { _productsThatUsePerKilo, _productsThatUseQuantity, CategoryOfProducts } from '../../enums/category-of-food.enum';
 
 @Component({
   selector: 'app-new-product',
@@ -16,7 +12,17 @@ interface Food {
 })
 export class NewProductComponent {
 
+  optionSelected?: CategoryOfProducts;
+
   handleOptionSelected(event: string): void {
-    console.log(event);
+    this.optionSelected = event as CategoryOfProducts;
+  }
+
+  isProductThatUsePerKilo(): boolean {
+    return (this.optionSelected && _productsThatUsePerKilo.includes(this.optionSelected)) ?? false;
+  }
+
+  isProductThatUsePerUnit(): boolean {
+    return (this.optionSelected && !_productsThatUseQuantity.includes(this.optionSelected)) ?? false;
   }
 }
