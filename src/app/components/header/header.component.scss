@@ -1,5 +1,4 @@
 .card {
-  background-color: var(--green-mid);
   border: 0;
   width: 100%;
   height: 96px;
@@ -9,4 +8,12 @@
   h1 {
     font-weight: 700;
   }
+}
+
+.background-green {
+  background-color: var(--green-mid);
+}
+
+.background-gray {
+  background-color: var(--gray-6);
 }

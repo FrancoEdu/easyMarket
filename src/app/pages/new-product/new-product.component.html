@@ -2,6 +2,8 @@
   <app-header-title [titleHeader]="'Novo produto'"/>
   <div class="form-content">
     <div class="w-100 form-group">
+      <app-header spanText="O preço do produto é" backgroundColor="background-gray"/>
+      
       <app-input placeholder="Nome"/>
       <app-category-dropdown (optionSelected)="handleOptionSelected($event)"/>
 
@@ -20,6 +22,14 @@
         <app-input placeholder="Preço por unidade (R$)" type="number"/>
         <app-input placeholder="Quantidade" type="number"/>
       }
+
+      <app-button
+        buttonTitleText="Adicionar" 
+        [variant]="'full'" 
+        [useSvgIcon]="true" 
+        iconPath="add" 
+        (handleClickButton)="handleClickButtonSave()" 
+      />
 
     </div>
   </div>
