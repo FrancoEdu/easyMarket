@@ -1,5 +1,5 @@
 import { v4 as uuidv4 } from 'uuid';
-import { _productsThatUsePerKilo, CategoryOfProducts } from '../enums/category-of-food';
+import { _productsThatUsePerKilo, CategoryOfProducts } from '../enums/category-of-food.enum';
 import { FinalPriceCalculatorFactory } from '../extensions/factory/final-price-calculator.factory';
 
 export class Product {

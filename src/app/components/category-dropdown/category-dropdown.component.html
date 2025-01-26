@@ -1,0 +1,10 @@
+<div class="dropdown">
+  <select>
+    <option value="">Selecione uma categoria</option>
+    @for (category of categories; track $index) {
+      <option [value]="category.value">
+        {{ category.label }}
+      </option>
+    }
+  </select>
+</div>

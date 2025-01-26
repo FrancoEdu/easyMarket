@@ -1,4 +1,4 @@
-import { CategoryOfProducts, _productsThatUsePerKilo, _productsThatUseQuantity } from "../../enums/category-of-food";
+import { CategoryOfProducts, _productsThatUsePerKilo, _productsThatUseQuantity } from "../../enums/category-of-food.enum";
 import { ICalculateFinalPrice } from "../interfaces/calculate-final-price.interface";
 import { CalculateFinalPriceProductsThatUsePerKilo } from "../services/calculate-final-price-that-use-per-kilo";
 import { CalculateFinalPriceThatUseQuantity } from "../services/calculate-final-price-that-use-quantity";
