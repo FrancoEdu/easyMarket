@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, output } from '@angular/core';
 import { CategoryOfProducts } from '../../enums/category-of-food.enum';
 
 @Component({
@@ -9,10 +9,17 @@ import { CategoryOfProducts } from '../../enums/category-of-food.enum';
 })
 export class CategoryDropdownComponent {
   
+  optionSelected = output<string>();
+
   categories = Object.keys(CategoryOfProducts).map((key) => ({
     value: key,
     label: this.getCategoryLabel(key as keyof typeof CategoryOfProducts),
   }));
+
+  handleSelectOptinChange(event: any): void {
+    const selectElement = event.target as HTMLSelectElement;
+    this.optionSelected.emit(selectElement.value);
+  }
 
   private getCategoryLabel(category: keyof typeof CategoryOfProducts): string {
     const labels: { [key: string]: string } = {

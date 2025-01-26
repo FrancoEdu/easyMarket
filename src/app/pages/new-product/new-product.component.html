@@ -3,7 +3,7 @@
   <div class="form-content">
     <div class="w-100 form-group">
       <app-input placeholder="Nome"/>
-      <app-category-dropdown/>
+      <app-category-dropdown (optionSelected)="handleOptionSelected($event)"/>
     </div>
   </div>
 </section>

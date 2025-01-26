@@ -1,5 +1,5 @@
 <div class="dropdown">
-  <select>
+  <select (change)="handleSelectOptinChange($event)">
     <option value="">Selecione uma categoria</option>
     @for (category of categories; track $index) {
       <option [value]="category.value">
