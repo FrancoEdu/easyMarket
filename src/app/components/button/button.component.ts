@@ -16,6 +16,7 @@ export class ButtonComponent {
   variant = input<buttonTypeStyleProps>('outline');
   useSvgIcon = input<boolean>(false);
   iconPath = input<string>('home');
+  isDisabled = input<boolean>(false);
 
   handleClickButton = output<void>();
 

@@ -1,4 +1,4 @@
-<button [ngClass]="variant()" class="button" (click)="handleClick()">
+<button [ngClass]="variant()" class="button" (click)="handleClick()" [disabled]="isDisabled()">
   @if (useSvgIcon()) 
   {
     <mat-icon aria-hidden="false" aria-label="Example home icon" [fontIcon]="iconPath()"></mat-icon>

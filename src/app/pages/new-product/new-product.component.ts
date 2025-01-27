@@ -26,9 +26,11 @@ export class NewProductComponent {
 
   handleOptionSelected(event: string): void {
     this.optionSelected = CategoryOfProducts[event as keyof typeof CategoryOfProducts];
+    this.productForm.get('category')?.setValue(this.optionSelected);
   }
 
   handleClickButtonSave(): void {
+    console.log('Validade do Formulário', this.productForm.invalid);
     console.log('Formulário válido. Dados:', this.productForm.value);
   }
 

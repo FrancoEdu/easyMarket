@@ -11,6 +11,11 @@ button {
   justify-content: center;
   text-align: center;
   gap: 4px;
+  transition: opacity 0.3s ease;
+}
+
+button:disabled {
+  opacity: 0.5;
 }
 
 .outline {

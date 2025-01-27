@@ -8,7 +8,7 @@
       <app-input placeholder="Nome" formControlName="name" />
 
       <!-- Dropdown de categoria -->
-      <app-category-dropdown (optionSelected)="handleOptionSelected($event)" />
+      <app-category-dropdown (optionSelected)="handleOptionSelected($event)"/>
 
       <!-- Campos condicionais para produtos que usam preço por quilo -->
       @if (isProductThatUsePerKilo) {
@@ -35,6 +35,7 @@
         [useSvgIcon]="true"
         iconPath="add"
         (handleClickButton)="handleClickButtonSave()"
+        [isDisabled]="productForm.invalid"
       />
     </div>
   </div>
