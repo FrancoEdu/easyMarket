@@ -2,7 +2,7 @@
   <app-header-title [titleHeader]="'Novo produto'" />
   <div class="form-content">
     <div class="w-100 form-group" [formGroup]="productForm">
-      <app-header spanText="O preço do produto é" backgroundColor="background-gray" />
+      <app-header spanText="O preço do produto é" backgroundColor="background-gray" [price]="calculateFinalPrice"/>
 
       <!-- Nome do produto -->
       <app-input placeholder="Nome" formControlName="name" />

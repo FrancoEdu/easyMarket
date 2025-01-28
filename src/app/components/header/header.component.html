@@ -1,4 +1,4 @@
 <section [ngClass]="backgroundColor()"  class="card">
   <span>{{ spanText() }}</span>
-  <h1>R$ {{ price() }}</h1>
+  <h1>R$ {{ price() | number:'1.2-2' }}</h1>
 </section>
