@@ -7,53 +7,58 @@
         <div class="col">
           <div class="badge-category">
             <span class="circle-badge"></span>
-            <span>Hortifrúti</span>
+            <span>{{ product?.CategoryOfProduct }}</span>
           </div>
         </div>
       </div>
       <div class="row">
         <div class="col">
           <span class="span-title">Nome</span>
-          <span>Picanha</span>
+          <span>{{ product?.Name }}</span>
         </div>
         <div class="col">
           <span class="span-title">Preço</span>
-          <span><span class="span-title">R$ </span> 200,00</span>
+          <span><span class="span-title">R$ </span> {{ product?.Price | number:'1.2-2'}}</span>
         </div>
       </div>
-      <div class="row">
-        <div class="col">
-          <span class="span-title">Preço/Kg</span>
-          <span><span class="span-title">R$ </span> 2100,00</span>
+      @if (_productsThatUsePerKilo.includes(product!.CategoryOfProduct)) {
+        <div class="row">
+          <div class="col">
+            <span class="span-title">Preço/Kg</span>
+            <span><span class="span-title">R$ </span> {{ product?.PricePerKilo | number:'1.2-2'}}</span>
+          </div>
+          <div class="col">
+            <span class="span-title">Peso</span>
+            <span>{{ product?.Kilo | number:'1.2-2' }}<span class="span-title">Kg</span></span>
+          </div>
         </div>
-        <div class="col">
-          <span class="span-title">Peso</span>
-          <span>1.200<span class="span-title">Kg</span></span>
+      }
+
+      @if (_productsThatUseQuantity.includes(product!.CategoryOfProduct)) {
+        <div class="row">
+          <div class="col">
+            <span class="span-title">Unidade ou fardo</span>
+            <span>{{ product?.UnitOrBale ? 'Unidade' : 'Fardo' }}</span>
+          </div>
+          <div class="col">
+            <span class="span-title">Quantidade</span>
+            <span>{{ product?.Quantity }}</span>
+          </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="col">
-          <span class="span-title">Unidade ou fardo</span>
-          <span>Unidade</span>
+        <div class="row">
+          <div class="col">
+            <span class="span-title">Preço unitário</span>
+            <span><span class="span-title">R$ </span> {{ product?.UnitPrice }}</span>
+          </div>
+          <div class="col"></div>
         </div>
-        <div class="col">
-          <span class="span-title">Quantidade</span>
-          <span>6</span>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col">
-          <span class="span-title">Preço unitário</span>
-          <span><span class="span-title">R$ </span> 20,00</span>
-        </div>
-        <div class="col"></div>
-      </div>
+      }
     </div>
     <div class="w-100 mb-1">
       <app-button buttonTitleText="Editar produto" [useSvgIcon]="true" iconPath="edit"/>
     </div>
     <div class="w-100">
-      <app-button buttonTitleText="Excluir do carrinho" [useSvgIcon]="true" iconPath="delete" [variant]="'delete'"/>
+      <app-button buttonTitleText="Excluir do carrinho" [useSvgIcon]="true" iconPath="delete" [variant]="'delete'" (handleClickButton)="handleDeleteProduct()"/>
     </div>
   </section>
 </section>
