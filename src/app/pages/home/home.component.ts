@@ -23,6 +23,7 @@ export class HomeComponent implements OnInit{
 
   navigationOptionsPossibilities = navigationPossibilities;
   products: Product[] = new Array<Product>();
+  totalPrice: number = 0.0;
 
   constructor(
     private readonly _router: Router,
@@ -31,6 +32,7 @@ export class HomeComponent implements OnInit{
 
   ngOnInit(): void {
     this.loadProductList();
+    this.totalPrice = this.getFinalPriceOfProductList();
   }
   
   handleClickButtonNavigation(navigateTo: navigationPossibilities): void {
@@ -44,8 +46,11 @@ export class HomeComponent implements OnInit{
     
     }
     
+    private getFinalPriceOfProductList(): number {
+      return this._productsService.getFinalPriceOfProductList();
+    }
+
     private loadProductList() {
       this.products = this._productsService.getAllProducts();
-      console.log(this.products);
   }
 }

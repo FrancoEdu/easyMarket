@@ -78,7 +78,8 @@ export class NewProductComponent {
       formValueProduct.pricePerKilo, 
       formValueProduct.quantity, 
       formValueProduct.unitOrBale, 
-      formValueProduct.unitPrice
+      formValueProduct.unitPrice,
+      formValueProduct.kilo
     );
 
     // Salvar o produto no localStorage

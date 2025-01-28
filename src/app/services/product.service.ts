@@ -81,6 +81,14 @@ export class ProductService {
   }
 
   /**
+   * Retorna o preço final da compra
+   */
+  getFinalPriceOfProductList(): number {
+    const products = this.getAllProducts();
+    return products.reduce((total, product) => total + product.Price, 0);
+  }
+
+  /**
    * Salva a lista de produtos no this._localStorage.
    * @param products Lista de produtos a ser salva.
    */

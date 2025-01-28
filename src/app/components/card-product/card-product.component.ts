@@ -3,10 +3,11 @@ import { MatIconModule } from '@angular/material/icon';
 import { Router } from '@angular/router';
 import { RoutesPath } from '../../app.routes';
 import { Product } from '../../models/product.model';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-card-product',
-  imports: [MatIconModule],
+  imports: [MatIconModule, CommonModule],
   templateUrl: './card-product.component.html',
   styleUrl: './card-product.component.scss'
 })

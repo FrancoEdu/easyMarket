@@ -14,7 +14,7 @@ export class Product {
   UnitPrice?: number;
 
   constructor(name: string, categoryOfProduct: CategoryOfProducts, pricePerKilo?: number, 
-    quantity?: number, unitOrBale?: boolean, unitPrice?: number) 
+    quantity?: number, unitOrBale?: boolean, unitPrice?: number, kilo?: number) 
   {
     this.Id = uuidv4().toString();
     this.Name = name;
@@ -22,6 +22,7 @@ export class Product {
     this.UnitOrBale = unitOrBale;
     this.UnitPrice = unitPrice;
     this.PricePerKilo = pricePerKilo;
+    this.Kilo = kilo;
     this.Quantity = quantity;
     this.Price = 0;
     
