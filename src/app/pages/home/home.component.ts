@@ -41,9 +41,11 @@ export class HomeComponent implements OnInit{
     this.products = inputText == '' 
       ? this._productsService.getAllProducts()
       : this._productsService.searchByText(inputText);
-  }
-
-  private loadProductList() {
-    this.products = this._productsService.getAllProducts();
+    
+    }
+    
+    private loadProductList() {
+      this.products = this._productsService.getAllProducts();
+      console.log(this.products);
   }
 }

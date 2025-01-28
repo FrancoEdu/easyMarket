@@ -85,6 +85,6 @@ export class ProductService {
    * @param products Lista de produtos a ser salva.
    */
   private saveProducts(products: Product[]): void {
-    this._localStorage.setItem(StorageKeys.PRODUCTS, JSON.stringify(products));
+    this._localStorage.setItem(StorageKeys.PRODUCTS, products);
   }
 }
