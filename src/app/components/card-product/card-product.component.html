@@ -8,7 +8,7 @@
       }
 
       @if (_productsThatUseQuantity.includes(product()!.CategoryOfProduct)) {
-        <span class="card-description-text">({{ product()?.UnitOrBale ? 'Unidade' : 'Fardo' }}) {{ product()?.Quantity }}x R${{product()?.UnitPrice}}</span>
+        <span class="card-description-text">({{ product()?.UnitOrBale ? 'Uni.' : 'Fardo' }}) {{ product()?.Quantity }}x R${{product()?.UnitPrice}}</span>
       }
     </div>
   </div>
