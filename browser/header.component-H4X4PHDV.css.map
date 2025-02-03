@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/components/header/header.component.scss"],
+  "sourcesContent": [".card {\n  border: 0;\n  width: 100%;\n  height: 96px;\n  justify-content: center;\n  text-align: center;\n\n  h1 {\n    font-weight: 700;\n  }\n}\n\n.background-green {\n  background-color: var(--green-mid);\n}\n\n.background-gray {\n  background-color: var(--gray-6);\n}"],
+  "mappings": "AAAA,CAAA,KACE,OAAA,EACA,MAAA,KACA,OAAA,KACA,gBAAA,OACA,WAAA,OAEA,CAPF,KAOE,GACE,YAAA,IAIJ,CAAA,iBACE,iBAAA,IAAA,aAGF,CAAA,gBACE,iBAAA,IAAA",
+  "names": []
+}

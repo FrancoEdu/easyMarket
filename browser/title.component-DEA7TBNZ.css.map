@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/components/title/title.component.scss"],
+  "sourcesContent": ["h1 {\n  color: var(--gray-2);\n}"],
+  "mappings": "AAAA,GACE,MAAA,IAAA",
+  "names": []
+}

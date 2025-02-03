@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/components/header-title/header-title.component.scss"],
+  "sourcesContent": [".header {\n  display: flex;\n  align-items: center;\n  background-color: transparent !important;\n  padding: 20px 16px 10px 16px;\n  text-align: center;\n}\n\n.back-button {\n  position: absolute;\n  background-color: transparent !important;\n  border: 0;\n}\n\n.header-title {\n  font-size: 18px;\n  font-weight: 500;\n  text-align: center;\n  width: 100%;\n  color: var(--gray-2);\n}\n"],
+  "mappings": "AAAA,CAAA,OACE,QAAA,KACA,YAAA,OACA,iBAAA,sBAHF,QAIE,KAAA,KAAA,KACA,WAAA,OAGF,CAAA,YACE,SAAA,SACA,iBAAA,sBACA,OAAA,EAGF,CAAA,aACE,UAAA,KACA,YAAA,IACA,WAAA,OACA,MAAA,KACA,MAAA,IAAA",
+  "names": []
+}
