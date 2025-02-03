@@ -30,4 +30,5 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
-        npx angular-cli-ghpages --dir=dist/easy-market --repo=https://github.com/FrancoEdu/easyMarket.git --branch=gh-pages --no-silent
+        npx angular-cli-ghpages --dir=dist/easy-market --repo=https://github.com/FrancoEdu/easyMarket.git --branch=gh-pages --name=<YOUR_USERNAME> --email=<YOUR_EMAIL>
+        npm run ng -- deploy --repo="https://github.com/FrancoEdu/easyMarket.git" --base-href=/easyMarket/ --name="Eduardo Franco" --email="franc0edu24@gmail.com"
