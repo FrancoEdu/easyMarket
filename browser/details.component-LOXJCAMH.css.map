@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/pages/details/details.component.scss"],
+  "sourcesContent": [".product-details {\n  margin-top: 20px;\n  gap: 10px;\n  .col {\n    display: flex;\n    flex-direction: column;\n    margin-bottom: 20px;\n  }\n}\n\n.span-title {\n  font-weight: 700;\n  color: var(--gray-2);\n}\n\n.badge-category {\n  display: flex;\n  flex-direction: row;\n  align-items: center;\n  justify-content: center;\n  gap: 20px;\n  border-radius: 6px;\n  padding: 4px 8px;\n  background-color: var(--gray-7);\n\n  .circle-badge {\n    width: 10px;\n    height: 10px;\n    border-radius: 50%;\n    background-color: var(--green-mid);\n  }\n}"],
+  "mappings": "AAAA,CAAA,gBACE,WAAA,KACA,IAAA,KACA,CAHF,gBAGE,CAAA,IACE,QAAA,KACA,eAAA,OACA,cAAA,KAIJ,CAAA,WACE,YAAA,IACA,MAAA,IAAA,UAGF,CAAA,eACE,QAAA,KACA,eAAA,IACA,YAAA,OACA,gBAAA,OACA,IAAA,KApBF,cAqBE,IArBF,QAsBE,IAAA,IACA,iBAAA,IAAA,UAEA,CAVF,eAUE,CAAA,aACE,MAAA,KACA,OAAA,KA3BJ,cA4BI,IACA,iBAAA,IAAA",
+  "names": []
+}

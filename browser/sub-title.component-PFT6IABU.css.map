@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/components/sub-title/sub-title.component.scss"],
+  "sourcesContent": ["span {\n  color: var(--gray-3);\n}"],
+  "mappings": "AAAA,KACE,MAAA,IAAA",
+  "names": []
+}

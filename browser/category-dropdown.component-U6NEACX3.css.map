@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/components/category-dropdown/category-dropdown.component.scss"],
+  "sourcesContent": [".dropdown {\n  position: relative;\n  width: 100%;\n\n  select {\n    width: 100%;\n    height: 48px;\n    padding: 10px;\n    font-size: 16px;\n    border: 1px solid var(--gray-4);\n    background-color: transparent !important;\n    border-radius: 6px;\n    appearance: none;\n    cursor: pointer;\n\n    &:focus {\n      outline: none;\n      border-color: var(--green-mid);\n    }\n  }\n\n  &::after {\n    content: \"keyboard_arrow_down\";\n    font-family: 'Material Icons';\n    position: absolute;\n    top: 50%;\n    right: 10px;\n    transform: translateY(-50%);\n    pointer-events: none;\n  }\n}"],
+  "mappings": "AAAA,CAAA,SACE,SAAA,SACA,MAAA,KAEA,CAJF,SAIE,OACE,MAAA,KACA,OAAA,KANJ,QAOI,KACA,UAAA,KACA,OAAA,IAAA,MAAA,IAAA,UACA,iBAAA,sBAVJ,cAWI,IACA,WAAA,KACA,OAAA,QAEA,CAfJ,SAeI,MAAA,OACE,QAAA,KACA,aAAA,IAAA,aAIJ,CArBF,QAqBE,OACE,QAAA,sBACA,YAAA,eACA,SAAA,SACA,IAAA,IACA,MAAA,KACA,UAAA,WAAA,MACA,eAAA",
+  "names": []
+}
