@@ -11,7 +11,7 @@ import { ToastrService } from 'ngx-toastr';
 import { Product } from '../../models/product.model';
 import { StorageService } from '../../services/storage.service';
 import { ProductService } from '../../services/product.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { RoutesPath } from '../../app.routes';
 
 @Component({
@@ -31,11 +31,12 @@ export class NewProductComponent {
     private readonly _cdr: ChangeDetectorRef,
     private readonly _toastrService: ToastrService,
     private readonly _productService: ProductService,
-    private readonly _router: Router
+    private readonly _router: Router,
+    private readonly _activatedRoute: ActivatedRoute,
   ) {
     this.buildResourceForm();
+    //this.handleProduct();
   }
-
   
   get isProductThatUsePerKilo(): boolean {
     if (this.optionSelected === undefined || this.optionSelected === null) return false;
@@ -136,4 +137,26 @@ export class NewProductComponent {
     this.productForm.get('quantity')?.setValue(null);
   }
 
+  private handleProduct(): void {
+    this._activatedRoute.paramMap.subscribe(params => {
+      const id = params.get('id');
+      if (id != undefined || id != null || id != '') {
+        const produto = this._productService.getProductById(id!);
+        if (produto == null) {
+          this._router.navigate([RoutesPath.HOME]);
+          this._toastrService.error("Produto não encontrado!");
+          return;
+        }
+
+        this.productForm.get('name')?.setValue(produto.Name);
+        this.productForm.get('category')?.setValue(produto.CategoryOfProduct);
+        this.productForm.get('pricePerKilo')?.setValue(produto.PricePerKilo);
+        this.productForm.get('kilo')?.setValue(produto.Kilo);
+        this.productForm.get('unitOrBale')?.setValue(produto.UnitOrBale);
+        this.productForm.get('unitPrice')?.setValue(produto.UnitPrice);
+        this.productForm.get('quantity')?.setValue(produto.Quantity);
+        this.productForm.updateValueAndValidity();
+      }
+    });
+  }
 }

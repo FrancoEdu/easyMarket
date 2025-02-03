@@ -34,6 +34,10 @@ export class DetailsComponent implements OnInit {
     this.handleProduct();
   }
 
+  handleEditProduct(): void {
+    this._router.navigate([RoutesPath.EDIT_PRODUCT, this.id]);
+  }
+
   handleDeleteProduct(): void {
     this._productService.removeProduct(this.id!);
     this._toastrService.success('Produto removido com sucesso');

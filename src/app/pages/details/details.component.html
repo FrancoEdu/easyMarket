@@ -54,9 +54,9 @@
         </div>
       }
     </div>
-    <div class="w-100 mb-1">
-      <app-button buttonTitleText="Editar produto" [useSvgIcon]="true" iconPath="edit"/>
-    </div>
+    <!-- <div class="w-100 mb-1">
+      <app-button buttonTitleText="Editar produto" [useSvgIcon]="true" iconPath="edit" (handleClickButton)="handleEditProduct()"/>
+    </div> -->
     <div class="w-100">
       <app-button buttonTitleText="Excluir do carrinho" [useSvgIcon]="true" iconPath="delete" [variant]="'delete'" (handleClickButton)="handleDeleteProduct()"/>
     </div>
