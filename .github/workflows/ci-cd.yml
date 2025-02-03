@@ -8,6 +8,8 @@ on:
 jobs:
   build-and-deploy: # Nome do job. Você pode dar qualquer nome que faça sentido para o seu workflow.
     runs-on: ubuntu-latest # Especifica o sistema operacional onde o job será executado.
+    permissions:
+      contents: write  # Garante permissão de escrita para o GITHUB_TOKEN
 
     steps: # Define os passos que serão executados dentro do job. Cada passo é uma ação ou comando que será executado.
     - name: Checkout code # Nome do passo. Isso ajuda a identificar o que está sendo feito.
