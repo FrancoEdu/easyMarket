@@ -1,0 +1,31 @@
+name: CI/CD EasyMarket to GitHub Pages
+
+on:
+  push:
+    branches:
+      - master  # Ou o nome da branch principal do seu projeto
+
+jobs:
+  build-and-deploy: # Nome do job. Você pode dar qualquer nome que faça sentido para o seu workflow.
+    runs-on: ubuntu-latest # Especifica o sistema operacional onde o job será executado.
+
+    steps: # Define os passos que serão executados dentro do job. Cada passo é uma ação ou comando que será executado.
+    - name: Checkout code # Nome do passo. Isso ajuda a identificar o que está sendo feito.
+      uses: actions/checkout@v3 # Especifica uma ação pré-definida do GitHub Actions. Aqui, estamos usando a ação actions/checkout@v3, que faz o checkout do código do repositório para o ambiente de execução.
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: 22.13  # Use a versão do Node.js que seu projeto precisa
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Build Angular project
+      run: npm run build -- --configuration production
+
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: dist/easy-market
