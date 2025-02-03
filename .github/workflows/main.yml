@@ -25,9 +25,9 @@ jobs:
 
     - name: Build Angular project
       run: npm run build -- --configuration production
-
-    - name: Deploy to GitHub Pages
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: dist/easy-market
+    
+    - name: Deploy to Github pages
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        npm run ng -- deploy --repo="https://github.com/FrancoEdu/easyMarket.git" --base-href=/easyMarket/
