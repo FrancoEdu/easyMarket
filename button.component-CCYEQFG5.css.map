@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["src/app/components/button/button.component.scss"],
-  "sourcesContent": ["button {\n  width: 100%;\n  padding: 3px;\n  border-radius: 6px;\n  border: 0;\n  font-weight: 700;\n  height: 48px;\n  display: flex;\n  flex-direction: row;\n  align-items: center;\n  justify-content: center;\n  text-align: center;\n  gap: 4px;\n  transition: opacity 0.3s ease;\n}\n\nbutton:disabled {\n  opacity: 0.5;\n}\n\n.outline {\n  background-color: transparent !important;\n  border-width: 2px;\n  border-style: solid;\n  border-color: var(--gray-2);\n}\n\n.full {\n  background-color: var(--gray-2);\n  color: var(--white);\n}\n\n.delete {\n  background-color: var(--red-dark) !important;\n  color: var(--white);\n}"],
-  "mappings": "AAAA,OACE,MAAA,KADF,QAEE,IAFF,cAGE,IACA,OAAA,EACA,YAAA,IACA,OAAA,KACA,QAAA,KACA,eAAA,IACA,YAAA,OACA,gBAAA,OACA,WAAA,OACA,IAAA,IACA,WAAA,QAAA,IAAA,KAGF,MAAA,UACE,QAAA,GAGF,CAAA,QACE,iBAAA,sBACA,aAAA,IACA,aAAA,MACA,aAAA,IAAA,UAGF,CAAA,KACE,iBAAA,IAAA,UACA,MAAA,IAAA,SAGF,CAAA,OACE,iBAAA,IAAA,sBACA,MAAA,IAAA",
-  "names": []
-}

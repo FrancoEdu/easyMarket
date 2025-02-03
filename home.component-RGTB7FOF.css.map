@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["src/app/pages/home/home.component.scss"],
-  "sourcesContent": [".responsive-layout {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  gap: 5px;\n}\n\n.content {\n  display: flex;\n  flex-direction: column;\n  gap: 8px;\n  width: 100%;\n  margin-top: 20px;\n}\n\n.botoes {\n  display: flex;\n  flex-direction: row;\n  justify-content: space-between;\n  gap: 4px;\n}\n\n@media (min-width: 768px) {\n  .responsive-layout {\n    flex-direction: row;\n    align-items: flex-start;\n    text-align: left;\n    gap: 32px;\n  }\n\n  .content {\n    flex: 2;\n    align-items: flex-start;\n  }\n}\n"],
-  "mappings": "AAAA,CAAA,kBACE,QAAA,KACA,eAAA,OACA,YAAA,OACA,gBAAA,OACA,IAAA,IAGF,CAAA,QACE,QAAA,KACA,eAAA,OACA,IAAA,IACA,MAAA,KACA,WAAA,KAGF,CAAA,OACE,QAAA,KACA,eAAA,IACA,gBAAA,cACA,IAAA,IAGF,OAAA,CAAA,SAAA,EAAA,OACE,CAxBF,kBAyBI,eAAA,IACA,YAAA,WACA,WAAA,KACA,IAAA,KAGF,CAvBF,QAwBI,KAAA,EACA,YAAA",
-  "names": []
-}
