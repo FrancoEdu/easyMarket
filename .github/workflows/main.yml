@@ -20,13 +20,14 @@ jobs:
       with:
         node-version: 22.13  # Use a versão do Node.js que seu projeto precisa
 
+    - name: Install dependencies
+      run: npm install
+
     - name: Build Angular project
-      run: npm install && npm run build:prod
-    
-    - name: Deploy to Github pages
-      uses: JamesIves/github-pages-deploy-action@releases/v2
+      run: npm run build -- --configuration production
+
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
       with:
-        ACESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        BASE_BRANCH: master
-        BRANCH: gh-pages
-        FOLDER: dist/browser
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: dist/
