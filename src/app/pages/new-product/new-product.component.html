@@ -12,8 +12,8 @@
 
       <!-- Campos condicionais para produtos que usam preço por quilo -->
       @if (isProductThatUsePerKilo) {
-        <app-input placeholder="Preço por quilo (R$)" type="number" formControlName="pricePerKilo" />
-        <app-input placeholder="Peso (kg)" type="number" formControlName="kilo" />
+        <app-input placeholder="Preço por quilo (R$)" [type]="'number'" formControlName="pricePerKilo" />
+        <app-input placeholder="Peso (kg)" [type]="'number'" formControlName="kilo" />
       }
 
       <!-- Campos condicionais para produtos que usam preço por unidade -->
@@ -24,8 +24,8 @@
             <option [value]="false">Fardo</option>
           </select>
         </div>
-        <app-input placeholder="Preço por unidade (R$)" type="number" formControlName="unitPrice" />
-        <app-input placeholder="Quantidade" type="number" formControlName="quantity" />
+        <app-input placeholder="Preço por unidade (R$)"  [type]="'number'" formControlName="unitPrice" />
+        <app-input placeholder="Quantidade" [type]="'number'" formControlName="quantity" />
       }
 
       <!-- Botão para salvar o produto -->

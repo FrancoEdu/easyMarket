@@ -17,6 +17,7 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 export class InputComponent implements ControlValueAccessor {
   placeholder = input<string>("Pesquise pelo produto...");
   valueTextInput = output<string>();
+  type = input<string>('text');
 
   inputValue: string = '';
   onChange: any = () => {};
