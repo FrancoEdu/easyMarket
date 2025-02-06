@@ -1,59 +1,37 @@
-# EasyMarket
+# EasyMarket 🛒💡
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.1.3.
+Bem-vindo ao **EasyMarket**, o seu assistente pessoal para compras no supermercado! Com o EasyMarket, você nunca mais precisará de papel, lápis ou calculadora para controlar suas compras. Nosso aplicativo foi projetado para simplificar sua vida, ajudando você a calcular o valor total das suas compras em tempo real, à medida que você adiciona itens ao carrinho.
 
-## Development server
+## Por que escolher o EasyMarket? 🤔
 
-To start a local development server, run:
+- **Facilidade de uso**: Interface intuitiva e amigável, perfeita para qualquer pessoa.
+- **Economia de tempo**: Pare de perder tempo somando manualmente os preços dos produtos.
+- **Sustentabilidade**: Reduza o desperdício de papel e contribua para um planeta mais verde.
+- **Precisão**: Cálculos automáticos e precisos, sem erros humanos.
 
-```bash
-ng serve
-```
+## Como funciona? 🛠️
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+1. **Adicione produtos**: Enquanto faz suas compras, adicione os itens ao carrinho no EasyMarket.
+2. **Cálculo em tempo real**: O aplicativo calcula automaticamente o valor total das suas compras.
+3. **Controle total**: Veja o valor atualizado a cada novo item adicionado.
+4. **Finalize suas compras**: Chegue ao caixa sabendo exatamente quanto vai gastar, sem surpresas.
 
-## Code scaffolding
+## Recursos principais 🌟
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+- **Adição rápida de produtos**: Escaneie o código de barras ou pesquise manualmente.
+- **Lista de compras integrada**: Crie e gerencie sua lista de compras diretamente no app.
+- **Histórico de compras**: Acompanhe seus gastos ao longo do tempo.
 
-```bash
-ng generate component component-name
-```
+## Acesse agora! 📲
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Não perca mais tempo com métodos ultrapassados. Transforme sua experiência de compras com o **EasyMarket**!
 
-```bash
-ng generate --help
-```
+[![Disponível na Web](https://francoedu.github.io/easyMarket/)](https://francoedu.github.io/easyMarket/)
 
-## Building
+## Contribuição 🤝
 
-To build the project run:
+Se você gostaria de contribuir para o desenvolvimento do EasyMarket, sinta-se à vontade para abrir uma issue ou enviar um pull request no nosso [repositório no GitHub](https://github.com/FrancoEdu/easyMarket).
 
-```bash
-ng build
-```
+---
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+**EasyMarket** - Simplificando suas compras, um item de cada vez. 🛍️✨
