@@ -25,7 +25,13 @@
       </div>
     </div>
     <div class="w-100">
-      <app-input (valueTextInput)="handleOnInputTextChange($event)"/>
+      <input 
+        (input)="handleOnInputTextChange()" 
+        placeholder="Pesquise pelo produto..." 
+        [value]="inputValue" 
+        class="common-input"
+        type="text"
+      />
       <app-flatlist [products]="products"/>
     </div>
   </div>

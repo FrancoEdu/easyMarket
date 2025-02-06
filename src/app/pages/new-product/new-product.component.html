@@ -5,15 +5,15 @@
       <app-header spanText="O preço do produto é" backgroundColor="background-gray" [price]="calculateFinalPrice"/>
 
       <!-- Nome do produto -->
-      <app-input placeholder="Nome" formControlName="name" />
+      <input placeholder="Nome" class="common-input" type="text" formControlName="name" />
 
       <!-- Dropdown de categoria -->
       <app-category-dropdown (optionSelected)="handleOptionSelected($event)"/>
 
       <!-- Campos condicionais para produtos que usam preço por quilo -->
       @if (isProductThatUsePerKilo) {
-        <app-input placeholder="Preço por quilo (R$)" [type]="'number'" formControlName="pricePerKilo" />
-        <app-input placeholder="Peso (kg)" [type]="'number'" formControlName="kilo" />
+        <input placeholder="Preço por quilo (R$)" class="common-input" type="number" formControlName="pricePerKilo" />
+        <input placeholder="Peso (kg)" class="common-input" type="number" formControlName="kilo" />
       }
 
       <!-- Campos condicionais para produtos que usam preço por unidade -->
@@ -24,8 +24,8 @@
             <option [value]="false">Fardo</option>
           </select>
         </div>
-        <app-input placeholder="Preço por unidade (R$)"  [type]="'number'" formControlName="unitPrice" />
-        <app-input placeholder="Quantidade" [type]="'number'" formControlName="quantity" />
+        <input placeholder="Preço por unidade (R$)" class="common-input" type="number" formControlName="unitPrice" />
+        <input placeholder="Quantidade" class="common-input" type="number" formControlName="quantity" />
       }
 
       <!-- Botão para salvar o produto -->

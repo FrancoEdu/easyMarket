@@ -1,6 +1,5 @@
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { InputComponent } from '../../components/input/input.component';
 import { ButtonComponent } from '../../components/button/button.component';
 import { HeaderComponent } from "../../components/header/header.component";
 import { HeaderTitleComponent } from '../../components/header-title/header-title.component';
@@ -9,14 +8,13 @@ import { _productsThatUsePerKilo, _productsThatUseQuantity, CategoryOfProducts }
 import { FinalPriceCalculatorFactory } from '../../extensions/factory/final-price-calculator.factory';
 import { ToastrService } from 'ngx-toastr';
 import { Product } from '../../models/product.model';
-import { StorageService } from '../../services/storage.service';
 import { ProductService } from '../../services/product.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { RoutesPath } from '../../app.routes';
 
 @Component({
   selector: 'app-new-product',
-  imports: [HeaderTitleComponent, InputComponent, CategoryDropdownComponent, ButtonComponent, HeaderComponent, ReactiveFormsModule],
+  imports: [HeaderTitleComponent, CategoryDropdownComponent, ButtonComponent, HeaderComponent, ReactiveFormsModule],
   templateUrl: './new-product.component.html',
   styleUrls: ['./new-product.component.scss'],
   providers: [ToastrService, ProductService]
@@ -158,9 +156,5 @@ export class NewProductComponent {
         this.productForm.updateValueAndValidity();
       }
     });
-  }
-
-  private replaceComma(s: string): string {
-    return s.replace(',', '.');
   }
 }

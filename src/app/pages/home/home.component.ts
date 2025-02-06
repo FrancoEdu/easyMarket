@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HeaderComponent } from "../../components/header/header.component";
 import { ButtonComponent } from "../../components/button/button.component";
-import { InputComponent } from "../../components/input/input.component";
 import { FlatlistComponent } from "../../components/flatlist/flatlist.component";
 import { Router } from '@angular/router';
 import { RoutesPath } from '../../app.routes';
@@ -17,7 +16,7 @@ enum navigationPossibilities {
 
 @Component({
   selector: 'app-home',
-  imports: [HeaderComponent, ButtonComponent, InputComponent, FlatlistComponent],
+  imports: [HeaderComponent, ButtonComponent, FlatlistComponent],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
 })
@@ -26,6 +25,7 @@ export class HomeComponent implements OnInit{
   navigationOptionsPossibilities = navigationPossibilities;
   products: Product[] = new Array<Product>();
   totalPrice: number = 0.0;
+  inputValue: string = '';
 
   constructor(
     private readonly _router: Router,
@@ -41,10 +41,10 @@ export class HomeComponent implements OnInit{
     this._router.navigate([navigateTo]);
   }
 
-  handleOnInputTextChange(inputText: string): void {
-    this.products = inputText == '' 
+  handleOnInputTextChange(): void {
+    this.products = this.inputValue == '' 
       ? this._productsService.getAllProducts()
-      : this._productsService.searchByText(inputText);
+      : this._productsService.searchByText(this.inputValue);
     
   }
 
