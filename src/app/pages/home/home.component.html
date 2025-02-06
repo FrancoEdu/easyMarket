@@ -26,9 +26,8 @@
     </div>
     <div class="w-100">
       <input 
-        (input)="handleOnInputTextChange()" 
-        placeholder="Pesquise pelo produto..." 
-        [value]="inputValue" 
+        (input)="handleOnInputTextChange($event)" 
+        placeholder="Pesquise pelo produto..."
         class="common-input"
         type="text"
       />

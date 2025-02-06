@@ -25,7 +25,6 @@ export class HomeComponent implements OnInit{
   navigationOptionsPossibilities = navigationPossibilities;
   products: Product[] = new Array<Product>();
   totalPrice: number = 0.0;
-  inputValue: string = '';
 
   constructor(
     private readonly _router: Router,
@@ -41,10 +40,12 @@ export class HomeComponent implements OnInit{
     this._router.navigate([navigateTo]);
   }
 
-  handleOnInputTextChange(): void {
-    this.products = this.inputValue == '' 
+  handleOnInputTextChange(event: Event): void {
+    const target = event.target as HTMLInputElement;
+    const inputValue = target.value;
+    this.products = inputValue == '' 
       ? this._productsService.getAllProducts()
-      : this._productsService.searchByText(this.inputValue);
+      : this._productsService.searchByText(inputValue);
     
   }
 
