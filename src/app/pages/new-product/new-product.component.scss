@@ -41,10 +41,12 @@
     border-radius: 6px;
     appearance: none;
     cursor: pointer;
+    color: var(--gray-2);
 
     &:focus {
       outline: none;
       border-color: var(--green-mid);
+      color: var(--gray-2);
     }
   }
 
@@ -56,5 +58,6 @@
     right: 10px;
     transform: translateY(-50%);
     pointer-events: none;
+    color: var(--gray-2);
   }
 }
