@@ -49,10 +49,13 @@ export class NewProductComponent {
   get calculateFinalPrice(): number {
     if (this.optionSelected === undefined || this.optionSelected === null) return 0.0; 
     const calculator = FinalPriceCalculatorFactory.createCalculator(this.optionSelected!);
-    return calculator.calculateFinalPrice(
-      parseFloat(this.productForm.get('kilo')?.value) ?? this.productForm.get('quantity')?.value ?? 0, 
-      parseFloat(this.productForm.get('pricePerKilo')?.value) ?? parseFloat(this.productForm.get('unitPrice')?.value) ?? 0
+
+    const result = calculator.calculateFinalPrice(
+      this.productForm.get('kilo')?.value ?? this.productForm.get('quantity')?.value ?? 0, 
+      this.productForm.get('pricePerKilo')?.value ?? this.productForm.get('unitPrice')?.value ?? 0
     );
+
+    return result;
   }
 
   handleOptionSelected(event: string): void {
