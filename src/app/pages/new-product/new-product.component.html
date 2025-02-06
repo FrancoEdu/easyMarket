@@ -6,14 +6,35 @@
 
       <!-- Nome do produto -->
       <input placeholder="Nome" class="common-input" type="text" formControlName="name" />
+      @if (productForm.get('name')?.invalid && productForm.get('name')?.touched) {
+        <span class="error-message">
+          Nome é obrigatório.
+        </span>
+      }
 
       <!-- Dropdown de categoria -->
       <app-category-dropdown (optionSelected)="handleOptionSelected($event)"/>
+      @if (productForm.get('category')?.invalid && productForm.get('category')?.touched) {
+        <span class="error-message">
+          Categoria é obrigatória.
+        </span>
+      }
 
       <!-- Campos condicionais para produtos que usam preço por quilo -->
       @if (isProductThatUsePerKilo) {
         <input placeholder="Preço por quilo (R$)" class="common-input" type="number" formControlName="pricePerKilo" />
+        @if (productForm.get('pricePerKilo')?.invalid && productForm.get('pricePerKilo')?.touched) {
+          <span class="error-message">
+            Preço por quilo deve ser um número válido.
+          </span>
+        }
+
         <input placeholder="Peso (kg)" class="common-input" type="number" formControlName="kilo" />
+        @if (productForm.get('kilo')?.invalid && productForm.get('kilo')?.touched) {
+          <span class="error-message">
+            Peso deve ser um número válido.
+          </span>
+        }
       }
 
       <!-- Campos condicionais para produtos que usam preço por unidade -->
@@ -25,7 +46,18 @@
           </select>
         </div>
         <input placeholder="Preço por unidade (R$)" class="common-input" type="number" formControlName="unitPrice" />
+        @if (productForm.get('unitPrice')?.invalid && productForm.get('unitPrice')?.touched) {
+          <span class="error-message">
+            Preço por unidade deve ser um número válido.
+          </span>
+        }
+
         <input placeholder="Quantidade" class="common-input" type="number" formControlName="quantity" />
+        @if (productForm.get('quantity')?.invalid && productForm.get('quantity')?.touched) {
+          <span class="error-message">
+            Quantidade deve ser um número válido.
+          </span>
+        }
       }
 
       <!-- Botão para salvar o produto -->

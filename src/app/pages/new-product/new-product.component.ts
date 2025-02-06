@@ -96,11 +96,11 @@ export class NewProductComponent {
     this.productForm = this._formBuilder.group({
       name: ['', Validators.required], // Nome do produto (obrigatório)
       category: [null, Validators.required], // Categoria do produto (obrigatório)
-      pricePerKilo: [null], // Preço por quilo (opcional)
-      kilo: [null], // Peso em quilos (opcional)
+      pricePerKilo: [null, [Validators.pattern(/^\d*\.?\d+$/)]], // Preço por quilo (opcional, mas deve ser número)
+      kilo: [null, [Validators.pattern(/^\d*\.?\d+$/)]], // Peso em quilos (opcional, mas deve ser número)
       unitOrBale: [true], // Unidade ou Fardo (padrão: Unidade)
-      unitPrice: [null], // Preço por unidade (opcional)
-      quantity: [null], // Quantidade (opcional)
+      unitPrice: [null, [Validators.pattern(/^\d*\.?\d+$/)]], // Preço por unidade (opcional, mas deve ser número)
+      quantity: [null, [Validators.pattern(/^\d*\.?\d+$/)]], // Quantidade (opcional, mas deve ser número)
     });
   }
 
@@ -109,14 +109,14 @@ export class NewProductComponent {
     this.cleanValues();
 
     if (this.isProductThatUsePerKilo) {
-      this.productForm.get('kilo')?.setValidators([Validators.required]);
-      this.productForm.get('pricePerKilo')?.setValidators([Validators.required]);
+      this.productForm.get('kilo')?.setValidators([Validators.required, Validators.pattern(/^\d*\.?\d+$/)]);
+      this.productForm.get('pricePerKilo')?.setValidators([Validators.required, Validators.pattern(/^\d*\.?\d+$/)]);
     }
 
     if (this.isProductThatUsePerUnit) {
       this.productForm.get('unitOrBale')?.setValidators([Validators.required]);
-      this.productForm.get('unitPrice')?.setValidators([Validators.required]);
-      this.productForm.get('quantity')?.setValidators([Validators.required]);
+      this.productForm.get('unitPrice')?.setValidators([Validators.required, Validators.pattern(/^\d*\.?\d+$/)]);
+      this.productForm.get('quantity')?.setValidators([Validators.required, Validators.pattern(/^\d*\.?\d+$/)]);
     }
 
     this.productForm.updateValueAndValidity();
@@ -136,28 +136,5 @@ export class NewProductComponent {
     this.productForm.get('unitOrBale')?.setValue(true);
     this.productForm.get('unitPrice')?.setValue(null);
     this.productForm.get('quantity')?.setValue(null);
-  }
-
-  private handleProduct(): void {
-    this._activatedRoute.paramMap.subscribe(params => {
-      const id = params.get('id');
-      if (id != undefined || id != null || id != '') {
-        const produto = this._productService.getProductById(id!);
-        if (produto == null) {
-          this._router.navigate([RoutesPath.HOME]);
-          this._toastrService.error("Produto não encontrado!");
-          return;
-        }
-
-        this.productForm.get('name')?.setValue(produto.Name);
-        this.productForm.get('category')?.setValue(produto.CategoryOfProduct);
-        this.productForm.get('pricePerKilo')?.setValue(produto.PricePerKilo);
-        this.productForm.get('kilo')?.setValue(produto.Kilo);
-        this.productForm.get('unitOrBale')?.setValue(produto.UnitOrBale);
-        this.productForm.get('unitPrice')?.setValue(produto.UnitPrice);
-        this.productForm.get('quantity')?.setValue(produto.Quantity);
-        this.productForm.updateValueAndValidity();
-      }
-    });
   }
 }
